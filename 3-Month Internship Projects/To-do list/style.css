@@ -1,0 +1,172 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #2d3436;
+  --container-bg: #f8f9fa;
+  --primary-color: #0984e3;
+  --hover-color: #74b9ff;
+  --transition: all 0.3s ease;
+}
+
+.dark-mode {
+  --bg-color: #2d3436;
+  --text-color: #dfe6e9;
+  --container-bg: #404040;
+  --primary-color: #6c5ce7;
+  --hover-color: #a8a5e6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--container-bg);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.theme-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--text-color);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  padding: 20px 5%;
+  gap: 20px;
+}
+
+.input-section {
+  background: var(--container-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tasks-container {
+  flex: 1;
+  background: var(--container-bg);
+  border-radius: 12px;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+.add-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.add-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: var(--bg-color);
+  margin-bottom: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  fill: #e74c3c;
+  transition: var(--transition);
+}
+
+.delete-btn:hover .delete-icon {
+  fill: #c0392b;
+}
+
+.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.task-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.sort-btn,
+.clear-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.sort-btn:hover,
+.clear-btn:hover {
+  background: var(--hover-color);
+}
